@@ -1,0 +1,173 @@
+/* ============================================================================
+   AhoraTengoPagina — Foundation Tokens
+   Three approved webfonts, no others:
+     · Inter        — default sans for product UI, marketing UI, forms,
+                       admin, checkout, body copy, headings ≤ H2
+     · Fraunces     — decorative serif. Hero headlines + premium /
+                       AI-generated-site headings ONLY.
+     · Merriweather — longform editorial only (case studies, blog posts,
+                       legal copy). Never UI chrome.
+   ----------------------------------------------------------------------------
+   Three product surfaces:
+     · Marketing  (light, Inter + Fraunces hero, blue + green)   prefix .m-*
+     · Customer Portal (dark, Inter, purple + teal)              prefix .c-*
+     · Planes / Checkout (light, Inter, blue + green)            prefix .p-*
+   ============================================================================ */
+
+/* Inter is served locally (see fonts.css for @font-face declarations).
+   Fraunces (hero serif) and Merriweather (longform) remain on Google Fonts. */
+/* Fonts loaded via Google Fonts in HTML head */
+
+:root {
+  /* ── BRAND CORE ── */
+  --brand-blue:        #1A56DB; /* primary marketing CTA / link */
+  --brand-blue-dark:   #1E40AF;
+  --brand-blue-light:  #DBEAFE;
+  --brand-green:       #22C55E; /* "go" — pricing, success, hero accent */
+  --brand-green-dark:  #16A34A;
+  --brand-purple:      #6C5CE7; /* customer portal primary */
+  --brand-teal:        #00D4AA; /* customer portal accent / "live" */
+  --brand-coral:       #FF6B6B; /* customer portal logout / danger */
+  --brand-gold:        #F0C040; /* highlight, ratings, premium */
+  --brand-navy:        #0E172A; /* hero / footer dark sections — slate-900 */
+  --brand-indigo-step: #4F46E5; /* numbered step circles on planes */
+
+  /* ── MARKETING SURFACE (light) ── */
+  --m-bg:          #FAFAF7;     /* warm off-white, NOT pure white */
+  --m-white:       #FFFFFF;
+  --m-dark:        #0F172A;
+  --m-dark-card:   #1E293B;
+  --m-text:        #1E293B;
+  --m-text-muted:  #64748B;
+  --m-text-light:  #94A3B8;
+  --m-border:      #E2E8F0;
+  --m-blue:        var(--brand-blue);
+  --m-blue-dark:   var(--brand-blue-dark);
+  --m-blue-light:  var(--brand-blue-light);
+  --m-green:       var(--brand-green);
+  --m-green-dark:  var(--brand-green-dark);
+
+  /* ── CUSTOMER PORTAL SURFACE (dark) ── */
+  --c-bg:          #0a0a0f;
+  --c-surface:     #111118;
+  --c-surface-2:   #1a1a24;
+  --c-border:      rgba(255,255,255,0.07);
+  --c-text:        #f0f0f8;
+  --c-text-muted:  #6b6b8a;
+  --c-text-dim:    #4a4a66;
+  --c-accent:      var(--brand-purple);
+  --c-accent-2:    var(--brand-teal);
+  --c-accent-3:    var(--brand-coral);
+  --c-gold:        var(--brand-gold);
+  --c-success:     #22c55e;
+  --c-warning:     #f59e0b;
+  --c-danger:      #ef4444;
+
+  /* ── SEMANTIC ── */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger:  #ef4444;
+  --color-info:    #3b82f6;
+
+  /* ── TYPE FAMILIES ──
+     Use --font-sans for ~95% of work. Reach for --font-serif only for hero
+     headlines and AI-generated-site mastheads. Reach for --font-editorial
+     only inside <article> longform. */
+  --font-sans:         'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans-display: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* large headings >= 28px */
+  --font-serif:        'Fraunces', 'Iowan Old Style', 'Times New Roman', serif;     /* hero/premium only */
+  --font-editorial:    'Merriweather', Georgia, 'Times New Roman', serif;           /* longform only */
+  --font-mono:         ui-monospace, 'SF Mono', Menlo, monospace;
+  /* Legacy aliases — kept so existing markup keeps rendering.
+     New code should use --font-sans / --font-serif / --font-editorial. */
+  --font-display:   var(--font-sans);
+  --font-body:      var(--font-sans);
+
+  /* Fraunces optical-size + variable settings for hero use */
+  --fraunces-hero-vars: "opsz" 144, "SOFT" 50;
+
+  /* ── TYPE SCALE (marketing / planes light surface) ── */
+  --fs-hero:    52px;   /* m-hero h1 */
+  --fs-h1:      32px;
+  --fs-h2:      28px;
+  --fs-h3:      22px;
+  --fs-lead:    20px;
+  --fs-body:    16px;
+  --fs-sm:      14px;
+  --fs-xs:      12px;
+  --fs-eyebrow: 10px;
+
+  /* ── RADIUS ── */
+  --radius-sm:  6px;
+  --radius:     8px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* ── SHADOW ── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.10);
+  --shadow-lg:  0 8px 30px rgba(0,0,0,0.12);
+
+  /* ── SPACING SCALE ── */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  20px;
+  --s-6:  24px;
+  --s-8:  32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-container: 1200px;
+
+  /* ── EASING / MOTION ── */
+  --ease-out:  cubic-bezier(.2,.8,.2,1);
+  --dur-fast:  150ms;
+  --dur:       200ms;
+  --dur-slow:  300ms;
+}
+
+/* ============================================================================
+   SEMANTIC TYPOGRAPHY
+   Defaults to Inter. Use .t-serif / .t-editorial sparingly.
+   ============================================================================ */
+
+/* Hero — Fraunces, the ONLY place Fraunces appears by default. */
+.t-hero       { font-family: var(--font-serif); font-weight: 600;
+                font-size: var(--fs-hero); line-height: 1.05;
+                letter-spacing: -1.5px;
+                font-variation-settings: "opsz" 144, "SOFT" 50; }
+.t-hero-em    { color: var(--brand-green); font-style: italic; }
+
+/* Standard product/marketing headings — Inter Display for large sizes */
+.t-h1         { font-family: var(--font-sans-display); font-weight: 800; font-size: var(--fs-h1); line-height: 1.15; letter-spacing: -0.5px; }
+.t-h2         { font-family: var(--font-sans-display); font-weight: 800; font-size: var(--fs-h2); line-height: 1.2;  letter-spacing: -0.5px; }
+.t-h3         { font-family: var(--font-sans);         font-weight: 700; font-size: var(--fs-h3); line-height: 1.3; }
+
+/* Optional decorative variants — opt-in only */
+.t-h1--serif  { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.8px;
+                font-variation-settings: "opsz" 96, "SOFT" 30; }
+
+/* Body */
+.t-lead       { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-lead); line-height: 1.6; color: var(--m-text-light); }
+.t-body       { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-body); line-height: 1.6; }
+.t-sm         { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-sm);   line-height: 1.55; color: var(--m-text-muted); }
+
+/* Editorial — only inside <article> longform */
+.t-editorial-h { font-family: var(--font-editorial); font-weight: 700; font-size: 30px; line-height: 1.25; letter-spacing: -0.3px; }
+.t-editorial   { font-family: var(--font-editorial); font-weight: 400; font-size: 18px; line-height: 1.7; }
+
+/* Eyebrow / labels */
+.t-eyebrow    { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-eyebrow); line-height: 1; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-green); }
+.t-eyebrow-c  { font-family: var(--font-sans); font-weight: 600; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--c-text-muted); }
+
+/* Numbers — pricing + stat cards. Inter Display tabular. */
+.t-num        { font-family: var(--font-sans-display); font-weight: 800; font-size: 46px; letter-spacing: -2px; font-variant-numeric: tabular-nums; }
+.t-num-c      { font-family: var(--font-sans-display); font-weight: 800; font-size: 28px; letter-spacing: -0.5px; color: var(--c-text); font-variant-numeric: tabular-nums; }
+
+/* Mono */
+.t-mono       { font-family: var(--font-mono); font-size: 13px; }
