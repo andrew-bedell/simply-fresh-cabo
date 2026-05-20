@@ -59,7 +59,11 @@ function Nav({ t, lang, setLang }: { t: Copy; lang: Lang; setLang: (l: Lang) => 
         </div>
         <div className="m-nav-cta-row">
           <LangToggle lang={lang} setLang={setLang} />
-          <a href="#contacto" className="m-btn-cta m-btn-green">{t.nav.cta}</a>
+          {lang === "en" ? (
+            <a href="/checkout" className="m-btn-cta m-btn-green">{t.nav.cta}</a>
+          ) : (
+            <a href="https://wa.me/573208867710" className="m-btn-cta m-btn-green" target="_blank" rel="noopener">{t.nav.cta}</a>
+          )}
         </div>
       </div>
     </nav>
@@ -80,10 +84,17 @@ function Hero({ t, lang }: { t: Copy; lang: Lang }) {
             </h1>
             <p className="m-hero-sub">{bold(t.hero.sub)}</p>
             <div className="m-hero-ctas">
-              <a href="#planes" className="m-btn-cta m-btn-green m-btn-lg">
-                {t.hero.ctaPrimary}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
+              {lang === "en" ? (
+                <a href="/checkout" className="m-btn-cta m-btn-green m-btn-lg">
+                  {t.hero.ctaPrimary}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+              ) : (
+                <a href="https://wa.me/573208867710" className="m-btn-cta m-btn-green m-btn-lg" target="_blank" rel="noopener">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4 0-.2 0-.3-.1-.5-.1-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.3z M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" /></svg>
+                  {t.hero.ctaPrimary}
+                </a>
+              )}
               <a href="#solucion" className="m-btn-outline-light">{t.hero.ctaSecondary}</a>
             </div>
             <p className="m-hero-fine">{t.hero.fine}</p>
@@ -392,7 +403,11 @@ function Plans({ t, lang }: { t: Copy; lang: Lang }) {
                   </li>
                 ))}
               </ul>
-              <a href="#contacto" className={`m-btn-cta m-btn-lg ${c.featured ? "m-btn-green" : "soc-btn-outline"} m-btn-block`}>
+              <a
+                href={lang === "en" ? "/checkout" : "https://wa.me/573208867710"}
+                {...(lang === "es" ? { target: "_blank", rel: "noopener" } : {})}
+                className={`m-btn-cta m-btn-lg ${c.featured ? "m-btn-green" : "soc-btn-outline"} m-btn-block`}
+              >
                 {c.cta}
               </a>
               <p className="soc-plan-fine">{c.fine}</p>
@@ -440,18 +455,25 @@ function Founder({ t, lang }: { t: Copy; lang: Lang }) {
 }
 
 // ─── CTA Strip ────────────────────────────────────────────────
-function CtaStrip({ t }: { t: Copy }) {
+function CtaStrip({ t, lang }: { t: Copy; lang: Lang }) {
   return (
     <section className="m-cta soc-cta">
       <div className="m-cta-inner">
         <h2 className="m-cta-h t-h1--serif">{t.cta.h}</h2>
         <p className="m-cta-sub">{t.cta.sub}</p>
         <div className="m-hero-ctas">
-          <a href="https://wa.me/5216241234567" className="m-btn-cta m-btn-green m-btn-lg" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h13l5 4V6a2 2 0 0 0-2-2z" /></svg>
-            {t.cta.btnWhatsapp}
-          </a>
-          <a href="#contacto" className="m-btn-outline-light">{t.cta.btnEmail}</a>
+          {lang === "en" ? (
+            <a href="/checkout" className="m-btn-cta m-btn-green m-btn-lg">
+              {t.cta.btnEmail}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </a>
+          ) : (
+            <a href="https://wa.me/573208867710" className="m-btn-cta m-btn-green m-btn-lg" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4 0-.2 0-.3-.1-.5-.1-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.3z M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" /></svg>
+              {t.cta.btnWhatsapp}
+            </a>
+          )}
+          <a href="#contacto" className="m-btn-outline-light">{lang === "en" ? "Contact us" : t.cta.btnEmail}</a>
         </div>
         <p className="m-hero-fine">{t.cta.fine}</p>
       </div>
@@ -480,11 +502,11 @@ function Contact({ t, lang }: { t: Copy; lang: Lang }) {
             <h2 className="t-h1 soc-contact-title">{t.contact.title}</h2>
             <p className="soc-contact-sub">{t.contact.sub}</p>
             <div className="soc-contact-channels">
-              <a href="https://wa.me/5216241234567" className="soc-channel soc-channel--wa" target="_blank" rel="noopener">
+              <a href="https://wa.me/573208867710" className="soc-channel soc-channel--wa" target="_blank" rel="noopener">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h13l5 4V6a2 2 0 0 0-2-2z" /></svg>
                 <div>
                   <div className="soc-channel-h">WhatsApp</div>
-                  <div className="soc-channel-v">+52 624 123 4567</div>
+                  <div className="soc-channel-v">+57 320 886 7710</div>
                 </div>
               </a>
               <a href="mailto:hola@simplyfreshcabo.mx" className="soc-channel">
@@ -586,7 +608,7 @@ function FooterSection({ t }: { t: Copy }) {
 // ─── WhatsApp Float ───────────────────────────────────────────
 function WhatsappFloat() {
   return (
-    <a href="https://wa.me/5216241234567" className="soc-wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <a href="https://wa.me/573208867710" className="soc-wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4 0-.2 0-.3-.1-.5-.1-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.3z M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" />
       </svg>
@@ -594,9 +616,41 @@ function WhatsappFloat() {
   );
 }
 
+// ─── Sticky Buy Now (English) ─────────────────────────────────
+function StickyBuyNow() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const on = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
+  return (
+    <a
+      href="/checkout"
+      className="soc-sticky-buy"
+      style={{
+        position: "fixed", bottom: 20, right: 20, zIndex: 900,
+        display: "flex", alignItems: "center", gap: 8,
+        padding: "14px 24px", background: "#16A34A", color: "#fff",
+        fontSize: 15, fontWeight: 700, borderRadius: 50,
+        textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,.2)",
+        opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.3s, transform 0.3s",
+        pointerEvents: visible ? "auto" : "none",
+      }}
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+      </svg>
+      Buy Now
+    </a>
+  );
+}
+
 // ─── App ──────────────────────────────────────────────────────
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("es");
+  const [lang, setLang] = useState<Lang>("en");
   const copy = CONTENT[lang];
 
   useEffect(() => {
@@ -620,10 +674,10 @@ export default function Home() {
       <HowWeGrow t={copy} />
       <Plans t={copy} lang={lang} />
       <Founder t={copy} lang={lang} />
-      <CtaStrip t={copy} />
+      <CtaStrip t={copy} lang={lang} />
       <Contact t={copy} lang={lang} />
       <FooterSection t={copy} />
-      <WhatsappFloat />
+      {lang === "en" ? <StickyBuyNow /> : <WhatsappFloat />}
     </>
   );
 }
