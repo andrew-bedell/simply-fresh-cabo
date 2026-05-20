@@ -19,7 +19,6 @@
   --color-sand-100: #f7ede0;
   --color-sand-50: #fdf8f2;
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 html {
@@ -28,6 +27,6 @@ html {
 
 body {
   background: #ffffff;
-  color: #1b4332;
+  color: #1b1b1b;
   font-family: var(--font-sans), system-ui, sans-serif;
 }

@@ -1,11 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
-import HowItWorks from "@/components/HowItWorks";
+import Desert from "@/components/Desert";
+import Towers from "@/components/Towers";
+import Families from "@/components/Families";
 import Products from "@/components/Products";
-import About from "@/components/About";
-import Testimonials from "@/components/Testimonials";
-import CTA from "@/components/CTA";
+import Process from "@/components/Process";
+import Pricing from "@/components/Pricing";
+import Founder from "@/components/Founder";
+import CTABanner from "@/components/CTABanner";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,12 +17,15 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Features />
+        <Desert />
+        <Towers />
+        <Families />
         <Products />
-        <HowItWorks />
-        <About />
-        <Testimonials />
-        <CTA />
+        <Process />
+        <Pricing />
+        <Founder />
+        <CTABanner />
+        <Contact />
       </main>
       <Footer />
     </>

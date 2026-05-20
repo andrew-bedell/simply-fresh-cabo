@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -8,16 +9,16 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Simply Fresh Cabo | Farm-Fresh Hydroponic Produce Delivery",
+  title: "Simply Fresh | Producto fresco, cosechado hoy en Cabo",
   description:
-    "Locally grown hydroponic produce delivered fresh to your door in Cabo San Lucas. Pesticide-free, sustainably grown, and harvested daily.",
+    "Canasta orgánica semanal entregada directo a tu cocina en Cabo. Cultivado en nuestras torres hidropónicas. Sin químicos, todo orgánico.",
   keywords: [
-    "fresh produce",
+    "producto fresco",
     "Cabo San Lucas",
-    "hydroponic",
-    "delivery",
-    "organic",
-    "local farm",
+    "hidropónico",
+    "entrega",
+    "orgánico",
+    "torres hidropónicas",
   ],
 };
 
@@ -27,8 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} antialiased`}>
-      <body className="min-h-screen flex flex-col">{children}</body>
+    <html lang="es" className={`${geistSans.variable} antialiased`}>
+      <body className="min-h-screen flex flex-col">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }
