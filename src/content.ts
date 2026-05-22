@@ -154,8 +154,8 @@ export const CONTENT = {
       title: "Alex Rodríguez · Ingeniero Agrónomo",
       p1: "Alex creció en el centro de Colombia, una de las regiones con mayor biodiversidad del mundo. Estudió en la Universidad del Tolima, donde se convirtió en Ingeniero Agrónomo.",
       p2: "Durante los siguientes 20 años viajó por Colombia construyendo invernaderos para cultivar de todo: desde flores y tomates hasta frutas exóticas. Aprendió a construir invernaderos industriales que hoy abastecen de alimentos a millones de personas en el mundo.",
-      p3: "Después de visitar a su hermana en Cabo, se dio cuenta de que existe una gran necesidad de productos frescos y orgánicos para los restaurantes y hoteles de alto nivel que siguen creciendo en la zona.",
-      p4: "Su objetivo es ayudar a los negocios de Cabo a ofrecer ingredientes saludables, para que la gente se mantenga sana y los negocios locales prosperen.",
+      p3: "Después de visitar a su hermana en Cabo, se dio cuenta de que las familias de la zona merecen acceso directo a productos frescos y orgánicos cultivados localmente, sin intermediarios ni días de viaje.",
+      p4: "Su objetivo es asegurar que las familias de Cabo sean alimentadas con las comidas más nutritivas del mundo — verduras y frutas cosechadas en su punto, llenas de sabor y nutrientes, directamente del invernadero a su mesa.",
       stats: [
         { num: "20+", label: "Años de experiencia" },
         { num: "1", label: "Universidad del Tolima" },
@@ -333,8 +333,8 @@ export const CONTENT = {
       title: "Alex Rodríguez · Agricultural Engineer",
       p1: "Alex grew up in central Colombia, one of the most biodiverse regions in the world. He studied at the Universidad del Tolima, where he became an Agricultural Engineer.",
       p2: "Over the next 20 years he traveled across Colombia building greenhouses to grow everything from flowers to tomatoes to exotic fruits. He learned how to build industrial greenhouses that today supply millions of people around the world.",
-      p3: "After visiting his sister in Cabo, he saw a huge need for fresh organic produce to serve the upscale restaurants and hotels growing in the area.",
-      p4: "His goal is to help Cabo businesses serve healthier ingredients, so people stay fit and local businesses thrive.",
+      p3: "After visiting his sister in Cabo, he realized families in the area deserved direct access to fresh organic produce grown locally — no middlemen, no days in transit.",
+      p4: "His goal is to make sure Cabo families are fed the most nutritious meals in the world — vegetables and fruits harvested at their peak, packed with flavor and nutrients, delivered straight from the greenhouse to their table.",
       stats: [
         { num: "20+", label: "Years of experience" },
         { num: "1", label: "Universidad del Tolima" },
